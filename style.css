@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Open+Sans:ital,wght@1,300&family=Roboto&family=Ubuntu:wght@300&display=swap');
+
+html *{ 
+    background-color: #d3d3d3 ;
+    font-family: 'Ubuntu', sans-serif;
+
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 950px;
+}
+.mainContainer {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border: 3px solid #1A1A1A;
+    width: 500px;
+    background-color: #696969;
+    border-radius: 15px;
+
+}
+.rows {
+    height: 90px;
+    width: 500px;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    background-color: #696969;
+
+    
+}
+.btn {
+    flex-grow: 1;
+    background-color: #808080;
+    border: 3px solid #1A1A1A;
+    width: 20px;
+    margin: 0px 2px;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+}
+#zero {
+    flex-grow: 2.25;
+}
+#display {
+    font-size:30px;
+    font-weight: bold;
+    background-color: #808080;
+    border: 3px solid #1A1A1A;
+    margin: 0px 2px;
+    height: 140px;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-direction: column;
+    align-items: flex-end;
+}
+#display span{
+    background-color: #808080;
+    margin: 15px;
+}
+#calculation{ 
+    color: #232b2b;
+    font-weight: lighter;
+}
+.user {
+    flex-grow: 1;
+}
