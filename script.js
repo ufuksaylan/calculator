@@ -112,7 +112,7 @@ const sign = document.querySelector('#sign');
 sign.addEventListener('click', function(){
     if (userInput.innerHTML[0] == '-')
         userInput.innerHTML = userInput.innerHTML.substring(1);
-    else
+    else if (userInput.innerHTML[0] != '0')
         userInput.innerHTML = '-' + userInput.innerHTML;
 });
 
@@ -127,6 +127,10 @@ function backgroundColorChecker(){
     return color;
 }
 
+const modulus = document.querySelector('#modulus');
+modulus.addEventListener('click', function(){
+        userInput.innerHTML = parseFloat(userInput.innerHTML) / 100.0;
+});
 
 
 //    background-color: #808080; darker rgb(128, 128, 128)
