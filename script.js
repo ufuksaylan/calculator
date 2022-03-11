@@ -65,13 +65,13 @@ operators.forEach(function(e){
         }
         else if (a == undefined)
         {
-            a = parseInt(userInput.innerHTML);
+            a = parseFloat(userInput.innerHTML);
             calculation.innerHTML = `${a}` + this.id;
         }
         else{
             console.log(calculation.innerHTML.slice(-1))
-            a = parseInt(calculation.innerHTML.slice(0,-1));
-            b = parseInt(userInput.innerHTML);
+            a = parseFloat(calculation.innerHTML.slice(0,-1));
+            b = parseFloat(userInput.innerHTML);
             userInput.innerHTML = Operation(calculation.innerHTML.slice(-1), a, b);
             calculation.innerHTML = userInput.innerHTML + this.id;
         }  
@@ -83,8 +83,8 @@ operators.forEach(function(e){
 const Eq = document.querySelector('#equal');
 equal.addEventListener('click', function(){
     if (a != undefined) {
-        a = parseInt(calculation.innerHTML.slice(0,-1));
-        b = parseInt(userInput.innerHTML);
+        a = parseFloat(calculation.innerHTML.slice(0,-1));
+        b = parseFloat(userInput.innerHTML);
         userInput.innerHTML = Operation(CurrentOperator, a, b);
         a = undefined;
         calculation.innerHTML = '';
@@ -99,6 +99,22 @@ clean.addEventListener('click', function(){
     calculation.innerHTML = '';
     operators.forEach((e) => e.style.backgroundColor = '#808080');
 })
+
+const dot = document.querySelector('#dot');
+dot.addEventListener('click', function(){
+    if (!userInput.innerHTML.includes("."))
+    {
+        userInput.innerHTML = userInput.innerHTML + '.';
+    }
+});
+
+const sign = document.querySelector('#sign');
+sign.addEventListener('click', function(){
+    if (userInput.innerHTML[0] == '-')
+        userInput.innerHTML = userInput.innerHTML.substring(1);
+    else
+        userInput.innerHTML = '-' + userInput.innerHTML;
+});
 
 function backgroundColorChecker(){
     let color = 2;
